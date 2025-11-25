@@ -1,0 +1,123 @@
+{
+  "name": "Abir Rahman",
+  "title": "Flutter Mobile Application Developer",
+  "location": "Dhaka, Bangladesh",
+  "email": "abirrahman959@gmail.com",
+  "phone": "+8801600223852",
+  "summary": "Flutter developer with 4+ years building production-grade apps for education, mobility, and services. I focus on clean architecture, testable state management, and measurable product outcomes that keep crash rates low and user satisfaction high.",
+  "ctaLabel": "Let’s discuss your next release",
+  "experienceLabel": "4+ Years",
+  "headshotAsset": "assets/images/profile.jpg",
+  "projects": [
+    {
+      "name": "Co-Learning Application",
+      "description": "Collaborative learning platform helping teachers access live content, assessments, and PLC resources.",
+      "link": "https://play.google.com/store/apps/details?id=com.bacbonitd.coleaming",
+      "tags": ["Education", "Firebase", "Realtime"]
+    },
+    {
+      "name": "BB Tutors",
+      "description": "Cross-platform tutor marketplace with scheduling, live class streaming, and guardian dashboards.",
+      "link": "https://apps.apple.com/pl/app/bacbon-tutors/id6449931601",
+      "tags": ["Marketplace", "Payments", "Live Class"]
+    },
+    {
+      "name": "ADB LMS",
+      "description": "Enterprise-scale learning management system for Asian Development Bank and Bangladesh Bank training needs.",
+      "link": "https://github.com/abir1h/ADB-LMS",
+      "tags": ["LMS", "Enterprise", "Analytics"]
+    },
+    {
+      "name": "CLMS",
+      "description": "Comprehensive LMS + eLibrary + social learning platform originally backed by USAID.",
+      "link": "https://github.com/abir1h/LMS/tree/stage",
+      "tags": ["Content Platform", "Collaboration"]
+    },
+    {
+      "name": "Turkey Fleet MS",
+      "description": "Vehicle management system for request tracking, fuel logging, and compliance checklists.",
+      "link": "",
+      "tags": ["Fleet", "Mobility", "Dashboards"]
+    },
+    {
+      "name": "Hire Me Now",
+      "description": "Nigeria-based marketplace connecting households with verified service professionals such as plumbers and mechanics.",
+      "link": "",
+      "tags": ["Marketplace", "Services"]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "BacBon Limited",
+      "role": "Flutter Developer",
+      "period": "Nov 2023 — Present",
+      "location": "Dhaka, Bangladesh",
+      "points": [
+        "Design and maintain high-quality Flutter apps powering the company’s e-learning ecosystem.",
+        "Implement innovative features while collaborating closely with UI/UX for intuitive experiences.",
+        "Optimize performance and reliability, reducing crash rates and elevating customer satisfaction."
+      ]
+    },
+    {
+      "company": "Star Computer Systems Limited",
+      "role": "Flutter Developer",
+      "period": "Sep 2022 — Oct 2023",
+      "location": "Dhaka, Bangladesh",
+      "points": [
+        "Built and supported mobile applications for Save the Children Bangladesh’s Tech Hub programs.",
+        "Maintained clean architecture and disciplined state management across distributed teams.",
+        "Led code reviews and debugging sessions that consistently reduced production bugs."
+      ]
+    },
+    {
+      "company": "Codecell Ltd",
+      "role": "Junior Flutter Developer",
+      "period": "Jul 2021 — Oct 2022",
+      "location": "Dhaka, Bangladesh",
+      "points": [
+        "Delivered core modules for multiple mobile applications spanning education and services.",
+        "Optimized memory usage to reduce launch time and improve perceived performance.",
+        "Participated in frequent code reviews to uphold standards and share best practices."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Daffodil International University",
+      "degree": "B.Sc. in Computer Science & Engineering",
+      "period": "2017 — 2021",
+      "location": "Dhaka, Bangladesh"
+    },
+    {
+      "institution": "Hazi Misir Ali University College",
+      "degree": "Higher Secondary School Certificate",
+      "period": "2014 — 2016",
+      "location": "Narayanganj, Bangladesh"
+    },
+    {
+      "institution": "Delpara High School",
+      "degree": "Secondary School Certificate",
+      "period": "2012 — 2014",
+      "location": "Narayanganj, Bangladesh"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Core",
+      "skills": ["Flutter", "Dart", "Flutter Web", "Clean Architecture"]
+    },
+    {
+      "title": "Ecosystem",
+      "skills": ["Firebase", "REST APIs", "Push Notification", "CI/CD"]
+    },
+    {
+      "title": "State Management",
+      "skills": ["GetX", "Riverpod", "Provider"]
+    },
+    {
+      "title": "Practices",
+      "skills": ["Code Review", "Performance Optimization", "Design Systems"]
+    }
+  ]
+}
+
