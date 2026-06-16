@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'data/content_loader.dart';
@@ -8,6 +9,15 @@ import 'theme/app_theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const PortfolioApp(loader: PortfolioContentLoader()));
+}
+
+class AppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
 }
 
 class PortfolioApp extends StatefulWidget {
@@ -39,7 +49,8 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
       title: 'Abir Rahman | Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
+      theme: AppTheme.theme,
+      scrollBehavior: AppScrollBehavior(),
       home: FutureBuilder<PortfolioData>(
         future: _portfolioFuture,
         builder: (context, snapshot) {

@@ -1,31 +1,61 @@
 {
   "name": "Abir Rahman",
-  "title": "Flutter Mobile Application Developer",
+  "title": "Software Engineer (Flutter Developer)",
   "location": "Dhaka, Bangladesh",
   "email": "abirrahman959@gmail.com",
   "phone": "+8801600223852",
+  "githubUrl": "https://github.com/abir1h",
+  "linkedinUrl": "https://www.linkedin.com/in/abir-rahman-3a7050145/",
   "summary": "Flutter developer with 4+ years building production-grade apps for education, mobility, and services. I focus on clean architecture, testable state management, and measurable product outcomes that keep crash rates low and user satisfaction high.",
   "ctaLabel": "Let’s discuss your next release",
   "experienceLabel": "4+ Years",
-  "headshotAsset": "assets/images/profile.jpg",
+  "headshotAsset": "assets/images/profile.png",
   "projects": [
+    {
+      "name": "Marktzoom",
+      "description": "A marketplace platform connecting buyers, sellers, and suppliers with automated offer matching, request tracking, and B2B/B2C procurement tools.",
+      "link": "https://play.google.com/store/apps/details?id=app.marktzoom.com",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=app.marktzoom.com",
+      "appStoreLink": "https://apps.apple.com/jp/app/marktzoom/id6753353675?l=en-US",
+      "tags": ["Marketplace", "B2B", "Procurement"]
+    },
+    {
+      "name": "Vitamins.ae H&B Marketplace",
+      "description": "Health and beauty e-commerce marketplace in the UAE, featuring advanced product search, wishlist & cart management, secure checkout, and real-time order tracking.",
+      "link": "https://play.google.com/store/apps/details?id=ae.propharma.vitamins",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=ae.propharma.vitamins",
+      "tags": ["E-commerce", "Marketplace", "Health & Wellness"]
+    },
+    {
+      "name": "Manaful",
+      "description": "Educational management platform designed for schools to streamline, schedule, and monitor tutoring processes with performance dashboards.",
+      "link": "https://play.google.com/store/apps/details?id=com.bacbonltd.manaful",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.bacbonltd.manaful",
+      "appStoreLink": "https://apps.apple.com/us/app/manaful/id6748067633",
+      "tags": ["Education", "Management", "Scheduling"]
+    },
     {
       "name": "Co-Learning Application",
       "description": "Collaborative learning platform helping teachers access live content, assessments, and PLC resources.",
-      "link": "https://play.google.com/store/apps/details?id=com.bacbonitd.coleaming",
+      "link": "https://play.google.com/store/apps/details?id=com.bacbonltd.colearning&pcampaignid=web_share",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.bacbonltd.colearning&pcampaignid=web_share",
+      "appStoreLink": "https://apps.apple.com/us/app/co-learning/id6741468980",
       "tags": ["Education", "Firebase", "Realtime"]
     },
     {
-      "name": "BB Tutors",
+      "name": "BacBon Tutors",
       "description": "Cross-platform tutor marketplace with scheduling, live class streaming, and guardian dashboards.",
       "link": "https://apps.apple.com/pl/app/bacbon-tutors/id6449931601",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.bacbonltd.bacbontutors&pcampaignid=web_share",
+      "appStoreLink": "https://apps.apple.com/pl/app/bacbon-tutors/id6449931601",
       "tags": ["Marketplace", "Payments", "Live Class"]
     },
     {
-      "name": "ADB LMS",
-      "description": "Enterprise-scale learning management system for Asian Development Bank and Bangladesh Bank training needs.",
-      "link": "https://github.com/abir1h/ADB-LMS",
-      "tags": ["LMS", "Enterprise", "Analytics"]
+      "name": "ELIT",
+      "description": "Enterprise learning management system (LMS) designed for Bangladesh Bank, offering course management, employee training, assessments, and progress tracking.",
+      "link": "https://play.google.com/store/apps/details?id=bd.org.bb.elit",
+      "playStoreLink": "https://play.google.com/store/apps/details?id=bd.org.bb.elit",
+      "tags": ["LMS", "Enterprise", "Education"]
     },
     {
       "name": "CLMS",
@@ -104,19 +134,19 @@
   "skills": [
     {
       "title": "Core",
-      "skills": ["Flutter", "Dart", "Flutter Web", "Clean Architecture"]
+      "skills": ["Flutter SDK", "Dart", "Clean Architecture", "SOLID Principles", "OOP"]
     },
     {
       "title": "Ecosystem",
-      "skills": ["Firebase", "REST APIs", "Push Notification", "CI/CD"]
+      "skills": ["Firebase", "REST APIs", "Local Databases (Hive, SQLite)", "Push Notifications", "App Store & Play Store Deployment"]
     },
     {
       "title": "State Management",
-      "skills": ["GetX", "Riverpod", "Provider"]
+      "skills": ["BLoC", "GetX", "Riverpod", "Provider"]
     },
     {
       "title": "Practices",
-      "skills": ["Code Review", "Performance Optimization", "Design Systems"]
+      "skills": ["CI/CD (GitHub Actions, Codemagic)", "Code Review", "Performance Tuning", "Design Systems", "Unit & Widget Testing"]
     }
   ]
 }

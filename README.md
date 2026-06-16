@@ -40,4 +40,4 @@ flutter run -d macos
 - Adjust gradients, shapes, or typography in `lib/theme/app_theme.dart`.
 - Add new sections or widgets in `lib/portfolio_page.dart`.
 - Extend `assets/content/portfolio.json` with new fields and parse them in `lib/data/profile.dart` if needed.
-- Replace the placeholder headshot at `assets/images/profile.jpg` with your photo (same file name) to update the hero image.
+- Replace the placeholder headshot at `assets/images/profile.png` with your photo (same file name) to update the hero image.

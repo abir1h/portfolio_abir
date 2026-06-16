@@ -18,12 +18,13 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(home: PortfolioPage(data: PortfolioData.abir)),
     );
+    await tester.pump(const Duration(seconds: 3));
     expect(
-      find.textContaining('Abir Rahman', findRichText: true),
+      find.text('Abir Rahman', findRichText: true),
       findsOneWidget,
     );
     expect(
-      find.textContaining('Flutter Mobile Application Developer'),
+      find.text('Software Engineer (Flutter Developer)', findRichText: true),
       findsOneWidget,
     );
   });

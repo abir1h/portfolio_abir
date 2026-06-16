@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abir Rahman - Software Engineer (Flutter Developer) CV</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #475569;
+      --text: #1e293b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+    }
+    .cv-container {
+      max-width: 820px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 30px 45px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      border-radius: 8px;
+    }
+    .no-print-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+    .btn-print {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.08);
+      transition: background-color 0.2s;
+    }
+    .btn-print:hover {
+      background-color: #1d4ed8;
+    }
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      margin: 0 0 2px 0;
+      font-size: 26px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .title {
+      font-size: 14.5px;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 12.5px;
+      color: var(--secondary);
+    }
+    .contact-info a {
+      color: var(--secondary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .contact-info a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    section {
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 14px;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .summary {
+      font-size: 13px;
+      color: var(--secondary);
+      margin: 0;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .skills-box {
+      font-size: 13px;
+      color: var(--secondary);
+      line-height: 1.5;
+    }
+    .skills-box p {
+      margin: 0 0 6px 0;
+    }
+    .skills-box p:last-child {
+      margin-bottom: 0;
+    }
+    .skills-box strong {
+      color: var(--primary);
+      display: inline-block;
+      width: 135px;
+    }
+    .experience-item {
+      margin-bottom: 12px;
+    }
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+    .company-role {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--primary);
+    }
+    .period-location {
+      font-size: 12px;
+      color: var(--secondary);
+      text-align: right;
+    }
+    ul {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 12.5px;
+      color: var(--secondary);
+    }
+    li {
+      margin-bottom: 2px;
+      line-height: 1.4;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .project-item {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 6px;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--primary);
+      margin: 0 0 3px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .project-title a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 600;
+    }
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+    .project-desc {
+      font-size: 12px;
+      color: var(--secondary);
+      margin: 0 0 6px 0;
+      line-height: 1.35;
+      flex-grow: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tag {
+      background-color: #f1f5f9;
+      color: var(--secondary);
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+    }
+    .other-projects {
+      font-size: 12.5px;
+      color: var(--secondary);
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .other-projects strong {
+      color: var(--primary);
+    }
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .education-item {
+      display: flex;
+      flex-direction: column;
+      font-size: 12.5px;
+    }
+    .degree-inst {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--primary);
+    }
+    .edu-meta {
+      font-size: 12px;
+      color: var(--secondary);
+      margin-top: 1px;
+    }
+    @media (max-width: 640px) {
+      .cv-container {
+        padding: 20px 15px;
+        margin: 10px;
+      }
+      .skills-grid, .project-grid, .education-grid {
+        grid-template-columns: 1fr;
+      }
+      .period-location {
+        text-align: left;
+        margin-top: 1px;
+      }
+    }
+    @media print {
+      @page {
+        size: A4;
+        margin: 6mm 10mm;
+      }
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 10.2px;
+        line-height: 1.45;
+      }
+      .cv-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      header {
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom-width: 1.5px;
+      }
+      h1 {
+        font-size: 22px;
+        margin-bottom: 2px;
+      }
+      .title {
+        font-size: 12.5px;
+        margin-bottom: 6px;
+      }
+      .contact-info {
+        font-size: 10px;
+        gap: 4px 12px;
+      }
+      section {
+        margin-bottom: 14px;
+      }
+      h2 {
+        font-size: 12px;
+        border-bottom-color: #000000;
+        margin-top: 0;
+        margin-bottom: 6px;
+        padding-bottom: 2px;
+      }
+      .summary {
+        font-size: 10.5px;
+        line-height: 1.4;
+      }
+      .skills-box {
+        font-size: 10.5px;
+        line-height: 1.4;
+      }
+      .skills-box p {
+        margin-bottom: 4px;
+      }
+      .skills-box strong {
+        width: 120px;
+      }
+      .experience-item {
+        margin-bottom: 8px;
+        page-break-inside: avoid;
+      }
+      .company-role {
+        font-size: 11px;
+      }
+      .period-location {
+        font-size: 9.5px;
+      }
+      ul {
+        padding-left: 14px;
+        font-size: 10px;
+      }
+      li {
+        margin-bottom: 1px;
+        line-height: 1.35;
+      }
+      .project-grid {
+        gap: 8px;
+      }
+      .project-item {
+        border-color: #cbd5e1;
+        background-color: transparent;
+        page-break-inside: avoid;
+        padding: 6px 10px;
+      }
+      .project-title {
+        font-size: 10.5px;
+        margin-bottom: 3px;
+      }
+      .project-title a {
+        font-size: 8.5px;
+      }
+      .project-desc {
+        font-size: 9.5px;
+        line-height: 1.3;
+        margin-bottom: 3px;
+      }
+      .project-tags {
+        gap: 3px;
+      }
+      .tag {
+        font-size: 8px;
+        padding: 0px 4px;
+        border-radius: 2px;
+      }
+      .other-projects {
+        font-size: 10px;
+        margin-top: 6px;
+      }
+      .education-grid {
+        gap: 8px;
+      }
+      .education-item {
+        margin-bottom: 4px;
+        page-break-inside: avoid;
+      }
+      .degree-inst {
+        font-size: 11px;
+      }
+      .edu-meta {
+        font-size: 9.5px;
+        margin-top: 1px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    <!-- Action bar for saving/printing CV -->
+    <div class="no-print-bar no-print">
+      <button class="btn-print" onclick="window.print()">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.821V21h10.56v-7.179m-10.56 0H3.36a1.44 1.44 0 01-1.44-1.44v-5.76a1.44 1.44 0 011.44-1.44h17.28a1.44 1.44 0 011.44 1.44v5.76a1.44 1.44 0 01-1.44 1.44h-3.36m-10.56 0V3h10.56v10.821"></path>
+        </svg>
+        Print / Save as PDF (A4 Page)
+      </button>
+    </div>
+
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>Abir Rahman</h1>
+          <div class="title">Software Engineer (Flutter Developer)</div>
+        </div>
+      </div>
+      <div class="contact-info">
+        <span>📍 Dhaka, Bangladesh</span>
+        <span>✉️ <a href="mailto:abirrahman959@gmail.com">abirrahman959@gmail.com</a></span>
+        <span>📞 <a href="tel:+8801600223852">+8801600223852</a></span>
+        <span>🔗 <a href="https://github.com/abir1h" target="_blank">GitHub</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/abir-rahman-3a7050145/" target="_blank">LinkedIn</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Highly skilled Software Engineer with 4+ years of experience designing, building, and deploying robust, cross-platform mobile applications using Flutter & Dart. Expert in Clean Architecture, SOLID design principles, BLoC, and modern state-management structures. Proven capability in boosting performance, optimizing application launch/memory sizes, and minimizing crash-rates to maximize customer satisfaction. Experienced in B2B/B2C marketplace design, payment checkout flows, and enterprise LMS applications.
+      </p>
+    </section>
+
+    <section>
+      <h2>Skills & Core Competencies</h2>
+      <div class="skills-box">
+        <p><strong>Core Development:</strong> Flutter SDK, Dart, Clean Architecture, SOLID Principles, OOP, Design Systems</p>
+        <p><strong>State Management:</strong> BLoC, GetX, Riverpod, Provider, RxDart</p>
+        <p><strong>Ecosystem & DB:</strong> Firebase, RESTful APIs, Local Databases (Hive, SQLite, Isar), Push Notifications</p>
+        <p><strong>Tools & Quality:</strong> Git/GitHub, CI/CD (GitHub Actions, Codemagic), Unit & Widget Testing, App Publishing</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="company-role">Flutter Developer | BacBon Limited</div>
+          <div class="period-location">Nov 2023 — Present | Dhaka, Bangladesh</div>
+        </div>
+        <ul>
+          <li>Build and maintain high-performing Flutter applications powering nationwide interactive e-learning communities.</li>
+          <li>Optimized performance and memory footprints, reducing crash rates and improving customer retention.</li>
+          <li>Partner with UI/UX design and product management to release responsive, user-friendly customer features.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="company-role">Flutter Developer | Star Computer Systems Limited</div>
+          <div class="period-location">Sep 2022 — Oct 2023 | Dhaka, Bangladesh</div>
+        </div>
+        <ul>
+          <li>Delivered modular, custom production applications for Save the Children Bangladesh, including workflow reporting systems.</li>
+          <li>Maintained clean, testable architectural codebases and disciplined state management (BLoC/GetX) for scaling.</li>
+          <li>Conducted peer code reviews and optimization audits that reduced post-release defect counts.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="company-role">Junior Flutter Developer | Codecell Ltd</div>
+          <div class="period-location">Jul 2021 — Oct 2022 | Dhaka, Bangladesh</div>
+        </div>
+        <ul>
+          <li>Programmed crucial core logical components for multiple consumer-facing mobile products in education and service industries.</li>
+          <li>Audited memory allocation and implemented lazy loading routines, boosting application launch times.</li>
+          <li>Contributed to peer reviews and shared coding best practices inside sprints.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <div class="project-title">
+            <span>Marktzoom</span>
+            <span>
+              <a href="https://play.google.com/store/apps/details?id=app.marktzoom.com" target="_blank">Play Store ↗</a> | 
+              <a href="https://apps.apple.com/jp/app/marktzoom/id6753353675?l=en-US" target="_blank">App Store ↗</a>
+            </span>
+          </div>
+          <p class="project-desc">A marketplace platform connecting buyers, sellers, and suppliers with automated offer matching, request tracking, and B2B/B2C procurement tools.</p>
+          <div class="project-tags">
+            <span class="tag">Marketplace</span>
+            <span class="tag">B2B</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>Vitamins.ae H&B Marketplace</span>
+            <a href="https://play.google.com/store/apps/details?id=ae.propharma.vitamins" target="_blank">Play Store ↗</a>
+          </div>
+          <p class="project-desc">Health and beauty e-commerce marketplace in the UAE, featuring advanced product search, wishlist & cart management, secure checkout, and real-time order tracking.</p>
+          <div class="project-tags">
+            <span class="tag">E-Commerce</span>
+            <span class="tag">Marketplace</span>
+            <span class="tag">UAE</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>ELIT</span>
+            <a href="https://play.google.com/store/apps/details?id=bd.org.bb.elit" target="_blank">Play Store ↗</a>
+          </div>
+          <p class="project-desc">Enterprise learning management system (LMS) designed for Bangladesh Bank, offering course management, employee training, assessments, and progress tracking.</p>
+          <div class="project-tags">
+            <span class="tag">LMS</span>
+            <span class="tag">Enterprise</span>
+            <span class="tag">Banking</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>BacBon Tutors</span>
+            <span>
+              <a href="https://play.google.com/store/apps/details?id=com.bacbonltd.bacbontutors&pcampaignid=web_share" target="_blank">Play Store ↗</a> | 
+              <a href="https://apps.apple.com/pl/app/bacbon-tutors/id6449931601" target="_blank">App Store ↗</a>
+            </span>
+          </div>
+          <p class="project-desc">Cross-platform tutor marketplace with scheduling, live class streaming, and guardian dashboards.</p>
+          <div class="project-tags">
+            <span class="tag">Marketplace</span>
+            <span class="tag">Payments</span>
+            <span class="tag">Live Class</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>Manaful</span>
+            <span>
+              <a href="https://play.google.com/store/apps/details?id=com.bacbonltd.manaful" target="_blank">Play Store ↗</a> | 
+              <a href="https://apps.apple.com/us/app/manaful/id6748067633" target="_blank">App Store ↗</a>
+            </span>
+          </div>
+          <p class="project-desc">Educational management platform designed for schools to streamline, schedule, and monitor tutoring processes with performance dashboards.</p>
+          <div class="project-tags">
+            <span class="tag">Education</span>
+            <span class="tag">Management</span>
+            <span class="tag">Scheduling</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">
+            <span>Co-Learning Application</span>
+            <span>
+              <a href="https://play.google.com/store/apps/details?id=com.bacbonltd.colearning&pcampaignid=web_share" target="_blank">Play Store ↗</a> | 
+              <a href="https://apps.apple.com/us/app/co-learning/id6741468980" target="_blank">App Store ↗</a>
+            </span>
+          </div>
+          <p class="project-desc">Collaborative learning platform helping teachers access live content, assessments, and PLC resources.</p>
+          <div class="project-tags">
+            <span class="tag">Education</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Realtime</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="other-projects">
+        <strong>Other Projects:</strong> 
+        CLMS (USAID learning ecosystem), 
+        Turkey Fleet MS (Mobility tracker & fuel logger), 
+        Hire Me Now (Verified service marketplace in Nigeria).
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education-item">
+          <div class="degree-inst">B.Sc. in Computer Science & Engineering</div>
+          <div class="edu-meta">Daffodil International University (2017 — 2021)</div>
+        </div>
+        <div class="education-item">
+          <div class="degree-inst">Higher Secondary Certificate</div>
+          <div class="edu-meta">Hazi Misir Ali University College (2014 — 2016)</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

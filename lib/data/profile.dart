@@ -34,6 +34,8 @@ class Project {
     required this.description,
     required this.link,
     required this.tags,
+    this.playStoreLink,
+    this.appStoreLink,
     this.id,
   });
 
@@ -41,6 +43,8 @@ class Project {
   final String name;
   final String description;
   final String link;
+  final String? playStoreLink;
+  final String? appStoreLink;
   final List<String> tags;
 
   factory Project.fromJson(Map<String, dynamic> json) => Project(
@@ -48,6 +52,8 @@ class Project {
     name: json['name'] as String? ?? '',
     description: json['description'] as String? ?? '',
     link: json['link'] as String? ?? '',
+    playStoreLink: json['playStoreLink'] as String?,
+    appStoreLink: json['appStoreLink'] as String?,
     tags: (json['tags'] as List<dynamic>? ?? [])
         .map((e) => e.toString())
         .toList(),
@@ -57,6 +63,8 @@ class Project {
     'name': name,
     'description': description,
     'link': link,
+    if (playStoreLink != null) 'playStoreLink': playStoreLink,
+    if (appStoreLink != null) 'appStoreLink': appStoreLink,
     'tags': tags,
   };
 }
@@ -84,6 +92,8 @@ class PortfolioData {
     required this.headshotAsset,
     this.headshotUrl,
     required this.experienceLabel,
+    this.githubUrl = '',
+    this.linkedinUrl = '',
   });
 
   final String name;
@@ -96,6 +106,8 @@ class PortfolioData {
   final String headshotAsset;
   final String? headshotUrl;
   final String experienceLabel;
+  final String githubUrl;
+  final String linkedinUrl;
   final List<Experience> experiences;
   final List<Education> education;
   final List<Project> projects;
@@ -103,13 +115,15 @@ class PortfolioData {
 
   static PortfolioData get abir => PortfolioData(
     name: 'Abir Rahman',
-    title: 'Flutter Mobile Application Developer',
+    title: 'Software Engineer (Flutter Developer)',
     location: 'Dhaka, Bangladesh',
     email: 'abirrahman959@gmail.com',
     phone: '+8801600223852',
     ctaLabel: 'Let’s build something impactful together',
-    headshotAsset: 'assets/images/profile.jpg',
+    headshotAsset: 'assets/images/profile.png',
     experienceLabel: '4+ Years',
+    githubUrl: 'https://github.com/abir1h',
+    linkedinUrl: 'https://www.linkedin.com/in/abir-rahman-3a7050145/',
     summary:
         'Flutter developer with 4+ years of experience building high-performing, crash-resistant apps for education, fleet, and talent marketplaces. Focused on scalable architecture, delightful UI, and measurable product outcomes.',
     experiences: const [
@@ -163,26 +177,58 @@ class PortfolioData {
     ],
     projects: const [
       Project(
+        name: 'Marktzoom',
+        description:
+            'A marketplace platform connecting buyers, sellers, and suppliers with automated offer matching, request tracking, and B2B/B2C procurement tools.',
+        link: 'https://play.google.com/store/apps/details?id=app.marktzoom.com',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=app.marktzoom.com',
+        appStoreLink: 'https://apps.apple.com/jp/app/marktzoom/id6753353675?l=en-US',
+        tags: ['Marketplace', 'B2B', 'Procurement'],
+      ),
+      Project(
+        name: 'Vitamins.ae H&B Marketplace',
+        description:
+            'Health and beauty e-commerce marketplace in the UAE, featuring advanced product search, wishlist & cart management, secure checkout, and real-time order tracking.',
+        link:
+            'https://play.google.com/store/apps/details?id=ae.propharma.vitamins',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=ae.propharma.vitamins',
+        tags: ['E-commerce', 'Marketplace', 'Health & Wellness'],
+      ),
+      Project(
+        name: 'Manaful',
+        description:
+            'Educational management platform designed for schools to streamline, schedule, and monitor tutoring processes with performance dashboards.',
+        link: 'https://play.google.com/store/apps/details?id=com.bacbonltd.manaful',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.bacbonltd.manaful',
+        appStoreLink: 'https://apps.apple.com/us/app/manaful/id6748067633',
+        tags: ['Education', 'Management', 'Scheduling'],
+      ),
+      Project(
         name: 'Co-Learning Application',
         description:
             'Collaborative learning platform that equips teachers and mentors with interactive content, assessments, and analytics.',
         link:
-            'https://play.google.com/store/apps/details?id=com.bacbonitd.coleaming',
+            'https://play.google.com/store/apps/details?id=com.bacbonltd.colearning&pcampaignid=web_share',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.bacbonltd.colearning&pcampaignid=web_share',
+        appStoreLink: 'https://apps.apple.com/us/app/co-learning/id6741468980',
         tags: ['Education', 'Collaboration', 'Firebase'],
       ),
       Project(
-        name: 'BB Tutors',
+        name: 'BacBon Tutors',
         description:
             'End-to-end tutor management platform with scheduling, live classes, and parent-facing insights.',
         link: 'https://apps.apple.com/pl/app/bacbon-tutors/id6449931601',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.bacbonltd.bacbontutors&pcampaignid=web_share',
+        appStoreLink: 'https://apps.apple.com/pl/app/bacbon-tutors/id6449931601',
         tags: ['Marketplace', 'Payments', 'Live Class'],
       ),
       Project(
-        name: 'ADB LMS',
+        name: 'ELIT',
         description:
-            'Specialized LMS for the Asian Development Bank and Bangladesh Bank with enterprise reporting.',
-        link: 'https://github.com/abir1h/ADB-LMS',
-        tags: ['LMS', 'Enterprise', 'Web'],
+            'Enterprise learning management system (LMS) designed for Bangladesh Bank, offering course management, employee training, assessments, and progress tracking.',
+        link: 'https://play.google.com/store/apps/details?id=bd.org.bb.elit',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=bd.org.bb.elit',
+        tags: ['LMS', 'Enterprise', 'Education'],
       ),
       Project(
         name: 'CLMS',
@@ -209,19 +255,37 @@ class PortfolioData {
     skills: const [
       SkillCategory(
         title: 'Core',
-        skills: ['Flutter', 'Dart', 'Flutter Web', 'Clean Architecture'],
+        skills: [
+          'Flutter SDK',
+          'Dart',
+          'Clean Architecture',
+          'SOLID Principles',
+          'OOP'
+        ],
       ),
       SkillCategory(
         title: 'Ecosystem',
-        skills: ['Firebase', 'REST APIs', 'Push Notifications', 'CI/CD'],
+        skills: [
+          'Firebase',
+          'REST APIs',
+          'Local Databases (Hive, SQLite)',
+          'Push Notifications',
+          'App Store & Play Store Deployment'
+        ],
       ),
       SkillCategory(
         title: 'State Management',
-        skills: ['GetX', 'Riverpod', 'Provider'],
+        skills: ['BLoC', 'GetX', 'Riverpod', 'Provider'],
       ),
       SkillCategory(
         title: 'Practices',
-        skills: ['Code Review', 'Performance Tuning', 'Design Systems'],
+        skills: [
+          'CI/CD (GitHub Actions, Codemagic)',
+          'Code Review',
+          'Performance Tuning',
+          'Design Systems',
+          'Unit & Widget Testing'
+        ],
       ),
     ],
   );
@@ -233,6 +297,8 @@ class PortfolioData {
     String? headshotUrl,
     String? experienceLabel,
     List<Project>? projects,
+    String? githubUrl,
+    String? linkedinUrl,
   }) {
     return PortfolioData(
       name: name,
@@ -249,6 +315,8 @@ class PortfolioData {
       headshotAsset: headshotAsset ?? this.headshotAsset,
       headshotUrl: headshotUrl ?? this.headshotUrl,
       experienceLabel: experienceLabel ?? this.experienceLabel,
+      githubUrl: githubUrl ?? this.githubUrl,
+      linkedinUrl: linkedinUrl ?? this.linkedinUrl,
     );
   }
 
@@ -260,6 +328,8 @@ class PortfolioData {
       email: json['email'] as String? ?? abir.email,
       phone: json['phone'] as String? ?? abir.phone,
       summary: json['summary'] as String? ?? abir.summary,
+      githubUrl: json['githubUrl'] as String? ?? abir.githubUrl,
+      linkedinUrl: json['linkedinUrl'] as String? ?? abir.linkedinUrl,
       experiences: (json['experiences'] as List<dynamic>? ?? [])
           .map(
             (e) => Experience(
