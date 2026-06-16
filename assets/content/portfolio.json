@@ -148,6 +148,26 @@
       "title": "Practices",
       "skills": ["CI/CD (GitHub Actions, Codemagic)", "Code Review", "Performance Tuning", "Design Systems", "Unit & Widget Testing"]
     }
+  ],
+  "practiceProjects": [
+    {
+      "name": "Habit Quest",
+      "description": "A gamified habit tracker that rewards users with XP and level-ups for completing daily tasks and routines. Features a clean, highly animated modern dark interface.",
+      "youtubeUrl": "https://youtube.com/shorts/ezH-vhCzmwI?si=LGD3dKBkbu1RdbZ4",
+      "tags": ["Flutter", "BLoC", "Gamification", "Hive"]
+    },
+    {
+      "name": "Tasky Kanban",
+      "description": "A beautiful local-first project management dashboard featuring interactive drag-and-drop lists, custom task templates, and workspace analytics.",
+      "youtubeUrl": "",
+      "tags": ["Flutter", "Hive DB", "Drag & Drop"]
+    },
+    {
+      "name": "FitTrack Workout",
+      "description": "A minimal, gesture-driven fitness logging app that focuses on ultra-fast logging, offline synchronization, and dynamic progress visualization charts.",
+      "youtubeUrl": "",
+      "tags": ["Dart", "SQLite", "Custom Painter"]
+    }
   ]
 }
 

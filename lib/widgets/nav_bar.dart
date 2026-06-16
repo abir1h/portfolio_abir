@@ -26,6 +26,7 @@ class _NavBarState extends State<NavBar> {
     'About',
     'Experience',
     'Projects',
+    'Practise',
     'Skills',
     'Contact',
   ];
@@ -175,6 +176,7 @@ class _NavBarState extends State<NavBar> {
     Icons.person_outline_rounded,
     Icons.work_outline_rounded,
     Icons.folder_open_rounded,
+    Icons.smart_display_outlined,
     Icons.code_rounded,
     Icons.mail_outline_rounded,
   ];

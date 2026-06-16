@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,6 +10,7 @@ import 'sections/education_section.dart';
 import 'sections/experience_section.dart';
 import 'sections/hero_section.dart';
 import 'sections/projects_section.dart';
+import 'sections/practise_section.dart';
 import 'sections/skills_section.dart';
 import 'theme/app_theme.dart';
 import 'widgets/dot_grid_background.dart';
@@ -30,7 +30,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
   final _activeSectionNotifier = ValueNotifier<int>(0);
 
   // Section keys for scroll-to navigation
-  final _sectionKeys = List.generate(6, (_) => GlobalKey());
+  final _sectionKeys = List.generate(7, (_) => GlobalKey());
 
   // Gamification state
   final Set<String> _unlockedAchievements = {};
@@ -115,10 +115,10 @@ class _PortfolioPageState extends State<PortfolioPage> {
       _unlockAchievement('curious_mind');
     } else if (sectionIndex == 2) {
       _unlockAchievement('career_tracker');
-    } else if (sectionIndex == 4) {
+    } else if (sectionIndex == 5) {
       _unlockAchievement('skill_appraiser');
       _unlockAchievement('academic_reviewer');
-    } else if (sectionIndex == 5) {
+    } else if (sectionIndex == 6) {
       _unlockAchievement('initiator');
     }
   }
@@ -551,16 +551,21 @@ class _PortfolioPageState extends State<PortfolioPage> {
                               onAchievementUnlocked: _unlockAchievement,
                             ),
                           ),
-                          // Skills
+                          // Practise Gallery
                           Container(
                             key: _sectionKeys[4],
+                            child: PractiseSection(data: widget.data),
+                          ),
+                          // Skills
+                          Container(
+                            key: _sectionKeys[5],
                             child: SkillsSection(data: widget.data),
                           ),
                           // Education (no own key — part of skills group)
                           EducationSection(data: widget.data),
                           // Contact
                           Container(
-                            key: _sectionKeys[5],
+                            key: _sectionKeys[6],
                             child: ContactSection(
                               data: widget.data,
                               onMailTap: _launchMail,

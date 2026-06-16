@@ -76,6 +76,36 @@ class SkillCategory {
   final List<String> skills;
 }
 
+class PracticeProject {
+  const PracticeProject({
+    required this.name,
+    required this.description,
+    required this.youtubeUrl,
+    required this.tags,
+  });
+
+  final String name;
+  final String description;
+  final String youtubeUrl;
+  final List<String> tags;
+
+  factory PracticeProject.fromJson(Map<String, dynamic> json) => PracticeProject(
+        name: json['name'] as String? ?? '',
+        description: json['description'] as String? ?? '',
+        youtubeUrl: json['youtubeUrl'] as String? ?? '',
+        tags: (json['tags'] as List<dynamic>? ?? [])
+            .map((e) => e.toString())
+            .toList(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'description': description,
+        'youtubeUrl': youtubeUrl,
+        'tags': tags,
+      };
+}
+
 class PortfolioData {
   const PortfolioData({
     required this.name,
@@ -88,6 +118,7 @@ class PortfolioData {
     required this.education,
     required this.projects,
     required this.skills,
+    required this.practiceProjects,
     required this.ctaLabel,
     required this.headshotAsset,
     this.headshotUrl,
@@ -112,6 +143,7 @@ class PortfolioData {
   final List<Education> education;
   final List<Project> projects;
   final List<SkillCategory> skills;
+  final List<PracticeProject> practiceProjects;
 
   static PortfolioData get abir => PortfolioData(
     name: 'Abir Rahman',
@@ -288,6 +320,26 @@ class PortfolioData {
         ],
       ),
     ],
+    practiceProjects: const [
+      PracticeProject(
+        name: 'Habit Quest',
+        description: 'A gamified habit tracker that rewards users with XP and level-ups for completing daily tasks and routines. Features a clean, highly animated modern dark interface.',
+        youtubeUrl: 'https://youtube.com/shorts/ezH-vhCzmwI?si=LGD3dKBkbu1RdbZ4',
+        tags: ['Flutter', 'BLoC', 'Gamification', 'Hive'],
+      ),
+      PracticeProject(
+        name: 'Tasky Kanban',
+        description: 'A beautiful local-first project management dashboard featuring interactive drag-and-drop lists, custom task templates, and workspace analytics.',
+        youtubeUrl: '',
+        tags: ['Flutter', 'Hive DB', 'Drag & Drop'],
+      ),
+      PracticeProject(
+        name: 'FitTrack Workout',
+        description: 'A minimal, gesture-driven fitness logging app that focuses on ultra-fast logging, offline synchronization, and dynamic progress visualization charts.',
+        youtubeUrl: '',
+        tags: ['Dart', 'SQLite', 'Custom Painter'],
+      ),
+    ],
   );
 
   PortfolioData copyWith({
@@ -297,6 +349,7 @@ class PortfolioData {
     String? headshotUrl,
     String? experienceLabel,
     List<Project>? projects,
+    List<PracticeProject>? practiceProjects,
     String? githubUrl,
     String? linkedinUrl,
   }) {
@@ -311,6 +364,7 @@ class PortfolioData {
       education: education,
       projects: projects ?? this.projects,
       skills: skills,
+      practiceProjects: practiceProjects ?? this.practiceProjects,
       ctaLabel: ctaLabel ?? this.ctaLabel,
       headshotAsset: headshotAsset ?? this.headshotAsset,
       headshotUrl: headshotUrl ?? this.headshotUrl,
@@ -366,6 +420,11 @@ class PortfolioData {
             ),
           )
           .toList(),
+      practiceProjects: (json['practiceProjects'] == null || (json['practiceProjects'] as List).isEmpty)
+          ? abir.practiceProjects
+          : (json['practiceProjects'] as List<dynamic>)
+              .map((e) => PracticeProject.fromJson(Map<String, dynamic>.from(e)))
+              .toList(),
       ctaLabel: json['ctaLabel'] as String? ?? abir.ctaLabel,
       headshotAsset: json['headshotAsset'] as String? ?? abir.headshotAsset,
       headshotUrl: json['headshotUrl'] as String?,
