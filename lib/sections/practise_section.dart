@@ -22,7 +22,7 @@ class PractiseSection extends StatelessWidget {
     final crossAxisCount = isMobile ? 1 : (isTablet ? 2 : 3);
 
     // Filter to show specific projects
-    final allowedProjects = ['habit quest', 'netflix clone ui'];
+    final allowedProjects = ['habit quest', 'netflix clone ui', 'travel go'];
     final practiceProjects = data.practiceProjects
         .where((p) => allowedProjects.contains(p.name.trim().toLowerCase()))
         .toList();
@@ -450,7 +450,10 @@ class _PracticeProjectDetailDialog extends StatelessWidget {
           children: [
             // Video Player — fills the phone screen
             Positioned.fill(
-              child: _ShortsVideoPlayer(videoId: videoId),
+              child: Transform.scale(
+                scale: (9 / 16) / 0.48, // Scale up to remove letterboxing while keeping the 0.48 mockup ratio
+                child: _ShortsVideoPlayer(videoId: videoId),
+              ),
             ),
             
             // Top Cover (hides status bar area neatly)

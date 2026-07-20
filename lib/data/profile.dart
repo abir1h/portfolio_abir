@@ -351,6 +351,12 @@ class PortfolioData {
     ],
     practiceProjects: const [
       PracticeProject(
+        name: 'Travel Go',
+        description: 'A modern travel booking and exploration app with a beautiful user interface, smooth animations, and an intuitive user experience.',
+        youtubeUrl: 'https://youtube.com/shorts/hnul8dCpkRw?si=iVGxXJba4qDLpgPf',
+        tags: ['Flutter', 'UI/UX', 'Animation'],
+      ),
+      PracticeProject(
         name: 'Habit Quest',
         description: 'A gamified habit tracker that rewards users with XP and level-ups for completing daily tasks and routines. Features a clean, highly animated modern dark interface.',
         youtubeUrl: 'https://youtube.com/shorts/ezH-vhCzmwI?si=LGD3dKBkbu1RdbZ4',
