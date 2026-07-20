@@ -20,12 +20,14 @@ class Education {
     required this.degree,
     required this.period,
     required this.location,
+    this.score,
   });
 
   final String institution;
   final String degree;
   final String period;
   final String location;
+  final String? score;
 }
 
 class Project {
@@ -199,15 +201,42 @@ class PortfolioData {
         degree: 'B.Sc. in Computer Science & Engineering',
         period: '2017 — 2021',
         location: 'Dhaka, Bangladesh',
+        score: 'CGPA: 3.75 out of 4.00',
       ),
       Education(
         institution: 'Hazi Misir Ali University College',
-        degree: 'Higher Secondary School Certificate',
+        degree: 'Higher Secondary School Certificate (HSC)',
         period: '2014 — 2016',
         location: 'Narayanganj, Bangladesh',
+        score: 'GPA: 4.92 out of 5.00',
+      ),
+      Education(
+        institution: 'High School', // User didn't specify school name
+        degree: 'Secondary School Certificate (SSC)',
+        period: 'Graduated 2014',
+        location: 'Bangladesh',
+        score: 'GPA: 4.17 out of 5.00',
       ),
     ],
     projects: const [
+      Project(
+        name: 'Prantik Biggyan',
+        description:
+            'Prantik Biggyan is a modern educational app for students and teachers from participating schools and educational institutions. It brings learning, assessments, communication, and academic progress into one easy-to-use mobile platform.',
+        link: 'https://play.google.com/store/apps/details?id=com.prantikbiggyan.app',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.prantikbiggyan.app',
+        appStoreLink: 'https://apps.apple.com/pl/app/prantik-biggyan/id6788683315',
+        tags: ['Education', 'Courses', 'Quizzes'],
+      ),
+      Project(
+        name: 'Morooj',
+        description:
+            'Morooj is Kuwait’s go-to app for finding and booking the perfect chalet getaway. Whether you’re planning a family retreat, a weekend with friends, or a private escape, Morooj makes it easy to browse, compare, and reserve top chalets in Kuwait’s most sought-after locations',
+        link: 'https://play.google.com/store/apps/details?id=com.app.moroj&hl=en',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.app.moroj&hl=en',
+        appStoreLink: 'https://apps.apple.com/kw/app/morooj/id6448949773',
+        tags: ['Travel', 'Booking', 'Kuwait'],
+      ),
       Project(
         name: 'Marktzoom',
         description:
@@ -404,6 +433,7 @@ class PortfolioData {
               degree: e['degree'] as String? ?? '',
               period: e['period'] as String? ?? '',
               location: e['location'] as String? ?? '',
+              score: e['score'] as String?,
             ),
           )
           .toList(),

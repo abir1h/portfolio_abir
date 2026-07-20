@@ -153,6 +153,33 @@ class _EducationNodeState extends State<_EducationNode> {
                                     color: AppTheme.textMuted,
                                   ),
                             ),
+                            if (widget.education.score != null) ...[
+                              const SizedBox(height: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: AppTheme.primary.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(6),
+                                  border: Border.all(
+                                    color: AppTheme.primary.withValues(alpha: 0.2),
+                                  ),
+                                ),
+                                child: Text(
+                                  widget.education.score!,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                        color: AppTheme.accent,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 11,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ],
                         ),
                       ),

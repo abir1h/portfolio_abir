@@ -26,18 +26,18 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = AppTheme.isMobile(context);
 
-    final onMail = () {
+    void onMail() {
       onContactClicked?.call();
       onMailTap();
-    };
-    final onPhone = () {
+    }
+    void onPhone() {
       onContactClicked?.call();
       onPhoneTap();
-    };
-    final onLink = (String url) {
+    }
+    void onLink(String url) {
       onContactClicked?.call();
       onLinkTap(url);
-    };
+    }
 
     return ScrollFadeIn(
       child: Padding(

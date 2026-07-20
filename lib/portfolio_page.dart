@@ -356,38 +356,40 @@ class _PortfolioPageState extends State<PortfolioPage> {
     return Positioned(
       bottom: 24,
       right: 24,
-      child: FloatingActionButton.extended(
-        onPressed: _showQuestDialog,
-        backgroundColor: AppTheme.cardBg,
-        elevation: 6,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-          side: BorderSide(color: Colors.amber.withValues(alpha: 0.6), width: 1.5),
-        ),
-        icon: const Icon(
-          Icons.emoji_events_rounded,
-          color: Colors.amber,
-          size: 20,
+      child: RepaintBoundary(
+        child: FloatingActionButton.extended(
+          onPressed: _showQuestDialog,
+          backgroundColor: AppTheme.cardBg,
+          elevation: 6,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+            side: BorderSide(color: Colors.amber.withValues(alpha: 0.6), width: 1.5),
+          ),
+          icon: const Icon(
+            Icons.emoji_events_rounded,
+            color: Colors.amber,
+            size: 20,
+          )
+              .animate(onPlay: (controller) => controller.repeat())
+              .shimmer(duration: 2.seconds, delay: 4.seconds),
+          label: Text(
+            'Quest: $unlockedCount/$totalCount',
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w800,
+              color: AppTheme.textPrimary,
+            ),
+          ),
         )
-            .animate(onPlay: (controller) => controller.repeat())
-            .shimmer(duration: 2.seconds, delay: 4.seconds),
-        label: Text(
-          'Quest: $unlockedCount/$totalCount',
-          style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w800,
-            color: AppTheme.textPrimary,
-          ),
-        ),
-      )
-          .animate()
-          .scale(
-            begin: const Offset(0, 0),
-            end: const Offset(1, 1),
-            duration: 500.ms,
-            curve: Curves.elasticOut,
-            delay: 2.seconds,
-          ),
+            .animate()
+            .scale(
+              begin: const Offset(0, 0),
+              end: const Offset(1, 1),
+              duration: 500.ms,
+              curve: Curves.elasticOut,
+              delay: 2.seconds,
+            ),
+      ),
     );
   }
 
@@ -398,82 +400,84 @@ class _PortfolioPageState extends State<PortfolioPage> {
       top: 80,
       right: 24,
       width: 320,
-      child: Column(
-        children: _activeNotifications.map((notif) {
-          return Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: BoxDecoration(
-              color: AppTheme.cardBg.withValues(alpha: 0.95),
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.amber.withValues(alpha: 0.8), width: 1.5),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.amber.withValues(alpha: 0.15),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.amber.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
+      child: RepaintBoundary(
+        child: Column(
+          children: _activeNotifications.map((notif) {
+            return Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                color: AppTheme.cardBg.withValues(alpha: 0.95),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.8), width: 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.amber.withValues(alpha: 0.15),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
                   ),
-                  child: Icon(
-                    notif.icon,
-                    color: Colors.amber,
-                    size: 24,
+                ],
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.amber.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      notif.icon,
+                      color: Colors.amber,
+                      size: 24,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Text(
-                        'QUEST UNLOCKED 🏆',
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 1.0,
-                          color: Colors.amber,
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          'QUEST UNLOCKED 🏆',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1.0,
+                            color: Colors.amber,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        notif.title,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w700,
-                          color: AppTheme.textPrimary,
+                        const SizedBox(height: 2),
+                        Text(
+                          notif.title,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                            color: AppTheme.textPrimary,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        notif.description,
-                        style: const TextStyle(
-                          fontSize: 11,
-                          color: AppTheme.textSecondary,
+                        const SizedBox(height: 2),
+                        Text(
+                          notif.description,
+                          style: const TextStyle(
+                            fontSize: 11,
+                            color: AppTheme.textSecondary,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-              .animate(key: ValueKey(notif.id))
-              .fadeIn(duration: 400.ms)
-              .slideX(begin: 1, end: 0, duration: 400.ms, curve: Curves.easeOutBack)
-              .then(delay: 2500.ms)
-              .fadeOut(duration: 400.ms)
-              .slideX(begin: 0, end: 1.2, duration: 400.ms, curve: Curves.easeIn);
-        }).toList(),
+                ],
+              ),
+            )
+                .animate(key: ValueKey(notif.id))
+                .fadeIn(duration: 400.ms)
+                .slideX(begin: 1, end: 0, duration: 400.ms, curve: Curves.easeOutBack)
+                .then(delay: 2500.ms)
+                .fadeOut(duration: 400.ms)
+                .slideX(begin: 0, end: 1.2, duration: 400.ms, curve: Curves.easeIn);
+          }).toList(),
+        ),
       ),
     );
   }
@@ -494,6 +498,21 @@ class _PortfolioPageState extends State<PortfolioPage> {
           // Dot grid background
           Positioned.fill(
             child: DotGridBackground(scrollController: _scrollController),
+          ),
+          // Glowing bottom background wave
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 350,
+            child: IgnorePointer(
+              child: CustomPaint(
+                painter: _GlowingWavePainter(
+                  AppTheme.primary.withValues(alpha: 0.25),
+                  AppTheme.violet.withValues(alpha: 0.15),
+                ),
+              ),
+            ),
           ),
           // Main content
           CustomScrollView(
@@ -524,55 +543,61 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           // Hero
                           Container(
                             key: _sectionKeys[0],
-                            child: HeroSection(
-                              data: widget.data,
-                              onMailTap: _launchMail,
-                              onPhoneTap: _launchPhone,
-                              onLinkTap: _launchLink,
-                              onScrollDown: () => _scrollToSection(1),
+                            child: RepaintBoundary(
+                              child: HeroSection(
+                                data: widget.data,
+                                onMailTap: _launchMail,
+                                onPhoneTap: _launchPhone,
+                                onLinkTap: _launchLink,
+                                onScrollDown: () => _scrollToSection(1),
+                              ),
                             ),
                           ),
                           // About
                           Container(
                             key: _sectionKeys[1],
-                            child: AboutSection(data: widget.data),
+                            child: RepaintBoundary(child: AboutSection(data: widget.data)),
                           ),
                           // Experience
                           Container(
                             key: _sectionKeys[2],
-                            child: ExperienceSection(data: widget.data),
+                            child: RepaintBoundary(child: ExperienceSection(data: widget.data)),
                           ),
                           // Projects
                           Container(
                             key: _sectionKeys[3],
-                            child: ProjectsSection(
-                              data: widget.data,
-                              onOpenLink: _launchLink,
-                              onAchievementUnlocked: _unlockAchievement,
+                            child: RepaintBoundary(
+                              child: ProjectsSection(
+                                data: widget.data,
+                                onOpenLink: _launchLink,
+                                onAchievementUnlocked: _unlockAchievement,
+                              ),
                             ),
                           ),
                           // Practise Gallery
                           Container(
                             key: _sectionKeys[4],
-                            child: PractiseSection(data: widget.data),
+                            child: RepaintBoundary(child: PractiseSection(data: widget.data)),
                           ),
                           // Skills
                           Container(
                             key: _sectionKeys[5],
-                            child: SkillsSection(data: widget.data),
+                            child: RepaintBoundary(child: SkillsSection(data: widget.data)),
                           ),
                           // Education (no own key — part of skills group)
-                          EducationSection(data: widget.data),
+                          RepaintBoundary(child: EducationSection(data: widget.data)),
                           // Contact
                           Container(
                             key: _sectionKeys[6],
-                            child: ContactSection(
-                              data: widget.data,
-                              onMailTap: _launchMail,
-                              onPhoneTap: _launchPhone,
-                              onLinkTap: _launchLink,
-                              onScrollToTop: _scrollToTop,
-                              onContactClicked: () => _unlockAchievement('initiator'),
+                            child: RepaintBoundary(
+                              child: ContactSection(
+                                data: widget.data,
+                                onMailTap: _launchMail,
+                                onPhoneTap: _launchPhone,
+                                onLinkTap: _launchLink,
+                                onScrollToTop: _scrollToTop,
+                                onContactClicked: () => _unlockAchievement('initiator'),
+                              ),
                             ),
                           ),
                         ],
@@ -583,10 +608,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
               ),
             ],
           ),
-          // Floating overlay achievement notices
-          _buildAchievementNotifications(),
-          // Floating quest logger button
-          _buildQuestFloatingButton(),
+          // Quest/Achievement features disabled per user request
         ],
       ),
     );
@@ -648,4 +670,45 @@ class AchievementNotification {
     required this.description,
     required this.icon,
   });
+}
+
+class _GlowingWavePainter extends CustomPainter {
+  final Color primary;
+  final Color violet;
+
+  _GlowingWavePainter(this.primary, this.violet);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final path = Path();
+    path.moveTo(0, size.height * 0.5);
+    
+    // First curve
+    path.quadraticBezierTo(
+      size.width * 0.25, size.height * 0.1, 
+      size.width * 0.5, size.height * 0.5
+    );
+    // Second curve
+    path.quadraticBezierTo(
+      size.width * 0.75, size.height * 0.9, 
+      size.width, size.height * 0.4
+    );
+    
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+
+    final paint = Paint()
+      ..shader = LinearGradient(
+        colors: [primary, violet],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 60);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

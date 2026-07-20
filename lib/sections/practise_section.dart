@@ -21,9 +21,10 @@ class PractiseSection extends StatelessWidget {
     final isTablet = AppTheme.isTablet(context);
     final crossAxisCount = isMobile ? 1 : (isTablet ? 2 : 3);
 
-    // Filter to only show Habit Quest for now
+    // Filter to show specific projects
+    final allowedProjects = ['habit quest', 'netflix clone ui'];
     final practiceProjects = data.practiceProjects
-        .where((p) => p.name.trim().toLowerCase() == 'habit quest')
+        .where((p) => allowedProjects.contains(p.name.trim().toLowerCase()))
         .toList();
 
     return ScrollFadeIn(
